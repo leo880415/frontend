@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "领研网页助手",
+  "version": "1.0.0",
+  "description": "网页助手，翻译，复制，导出等功能",
+  "author": "刘流",
+  "icons": {
+    "16": "image/logo.png",
+    "32": "image/logo.png",
+    "48": "image/logo.png",
+    "128": "image/logo.png"
+  },
+  "action": {
+    "default_icon": "image/logo.png",
+    "default_title": "领研网页助手",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "js/backend.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["js/Readability.js","js/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["scripting", "activeTab"]
+}
